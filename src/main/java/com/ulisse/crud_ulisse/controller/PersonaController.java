@@ -46,7 +46,7 @@ public class PersonaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Persona> actualizar(@PathVariable Long id, @RequestBody Persona persona) {
+    public ResponseEntity<Persona> actualizar(@PathVariable Long id, @Valid @RequestBody Persona persona) {
         return service.searchById(id)
                 .map(p -> {
                     p.setName(persona.getName());
