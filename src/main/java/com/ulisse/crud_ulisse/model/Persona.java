@@ -3,6 +3,7 @@ package com.ulisse.crud_ulisse.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "persona")
@@ -13,6 +14,7 @@ public class Persona {
     private Long id;
 
     @NotBlank(message = "The name cannot be empty")
+    @Size(min = 2, message = "The name must be at least 2 characters long")
     private String name;
 
     @NotBlank(message = "The email cannot be empty")
